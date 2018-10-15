@@ -6,4 +6,5 @@ public enum VehicleStatusType implements Serializable {
     /*
     TODO: Possible vehicle status types: -> reserved, free, not available
      */
+    
 }
