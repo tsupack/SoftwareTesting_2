@@ -6,7 +6,7 @@ public class User {
     TODO: id, userName, adress, phoneNumber
      */
 
-  private String id;
+  private long id;
   private String userName;
   private String address;
   private long phoneNumber;
@@ -14,11 +14,11 @@ public class User {
   private String drivingLicenceNumber;
   private UserType userType;
 
-  public String getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -71,8 +71,7 @@ public class User {
     if (drivingLicenceNumber == null && other.drivingLicenceNumber != null) return false;
     if (!drivingLicenceNumber.equals(other.drivingLicenceNumber)) return false;
     if (phoneNumber != other.phoneNumber) return false;
-    if (id == null && other.id != null) return false;
-    if (!id.equals(other.id)) return false;
+    if (id != other.id)) return false;
     if (userName == null && other.userName != null) return false;
     if (!userName.equals(other.userName)) return false;
     return true;
@@ -88,7 +87,7 @@ public class User {
     result = prime * result + age;
     result = prime * result + ((userName == null) ? 0 : userName.hashCode());
     result = prime * result + ((drivingLicenceNumber == null) ? 0 : drivingLicenceNumber.hashCode());
-    result = prime * result + ((id == null) ? 0 : id.hashCode());
+    result = prime * result + (int)id;
     return result;
   }
 }

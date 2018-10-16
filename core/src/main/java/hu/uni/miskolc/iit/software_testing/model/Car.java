@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Car {
 
-  private String id;
+  private long id;
   private String type;
   private String manufacturer;
   private String carStatus;
@@ -32,11 +32,11 @@ public class Car {
     this.careIdNumber = careIdNumber;
   }
 
-  public String getId() {
+  public long getId() {
     return id;
   }
 
-  public void setId(String id) {
+  public void setId(long id) {
     this.id = id;
   }
 
@@ -115,7 +115,7 @@ public class Car {
   public int hashCode() {
     int result;
     long temp;
-    result = getId() != null ? getId().hashCode() : 0;
+    result = 31 * (int)getId();
     result = 31 * result + (getType() != null ? getType().hashCode() : 0);
     result = 31 * result + (getManufacturer() != null ? getManufacturer().hashCode() : 0);
     result = 31 * result + (getYearOfManufacture() != null ? getYearOfManufacture().hashCode() : 0);

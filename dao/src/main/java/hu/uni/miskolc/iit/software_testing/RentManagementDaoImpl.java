@@ -3,6 +3,7 @@ package hu.uni.miskolc.iit.software_testing;
 import hu.uni.miskolc.iit.software_testing.dao.RentManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.RentNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,12 +19,17 @@ public class RentManagementDaoImpl implements RentManagementDao {
 
   @Override
   public Rent createRent(Rent rent) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override
   public Rent getRentById(long id) throws RentNotFoundException {
-    return null;
+    List<Rent> rents = readDatabase();
+    for(Rent rent : rents){
+      if(rent.getId() == id)
+        return rent;
+    }
+    throw new RentNotFoundException("The requested rent can not be found, ID: " + id);
   }
 
   @Override
@@ -33,7 +39,7 @@ public class RentManagementDaoImpl implements RentManagementDao {
 
   @Override
   public void deleteRent(Rent rent) throws RentNotFoundException {
-
+    throw new NotImplementedException();
   }
 
   @Override
@@ -44,7 +50,7 @@ public class RentManagementDaoImpl implements RentManagementDao {
 
   @Override
   public void clear() {
-
+    throw new NotImplementedException();
   }
 
   private List<Rent> readDatabase() {

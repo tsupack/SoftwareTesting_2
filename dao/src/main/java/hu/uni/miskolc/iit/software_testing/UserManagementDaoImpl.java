@@ -3,6 +3,7 @@ package hu.uni.miskolc.iit.software_testing;
 import hu.uni.miskolc.iit.software_testing.dao.UserManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.UserNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.User;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,12 +19,18 @@ public class UserManagementDaoImpl implements UserManagementDao {
 
   @Override
   public User addUser(User user) {
-    return null;
+
+    throw new NotImplementedException();
   }
 
   @Override
   public User getuserById(long id) throws UserNotFoundException {
-    return null;
+    List<User> users = readDatabase();
+    for(User user : users){
+      if(user.getId() == id)
+        return user;
+    }
+    throw new UserNotFoundException("The requested user can not be found, ID: " + id);
   }
 
   @Override
@@ -33,7 +40,7 @@ public class UserManagementDaoImpl implements UserManagementDao {
 
   @Override
   public void deleteUser(User user) throws UserNotFoundException {
-
+    throw new NotImplementedException();
   }
 
   @Override
@@ -44,7 +51,7 @@ public class UserManagementDaoImpl implements UserManagementDao {
 
   @Override
   public void clear() {
-
+    throw new NotImplementedException();
   }
 
   private List<User> readDatabase() {

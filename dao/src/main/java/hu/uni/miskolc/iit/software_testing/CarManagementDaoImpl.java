@@ -3,6 +3,7 @@ package hu.uni.miskolc.iit.software_testing;
 import hu.uni.miskolc.iit.software_testing.dao.CarManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.CarNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,12 +19,17 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public Car createCar(Car car) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override
   public Car getCarById(long id) throws CarNotFoundException {
-    return null;
+    List<Car> cars = readDatabase();
+    for(Car car : cars){
+      if(car.getId() == id)
+        return car;
+    }
+    throw new CarNotFoundException(("The requested car can not be found, ID:" + id));
   }
 
   @Override
@@ -33,7 +39,7 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public void deleteCar(Car car) throws CarNotFoundException {
-
+    throw new NotImplementedException();
   }
 
   @Override
@@ -44,7 +50,7 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public void clear() {
-
+    throw new NotImplementedException();
   }
 
   private List<Car> readDatabase() {
