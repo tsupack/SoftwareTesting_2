@@ -71,7 +71,7 @@ public class User {
     if (drivingLicenceNumber == null && other.drivingLicenceNumber != null) return false;
     if (!drivingLicenceNumber.equals(other.drivingLicenceNumber)) return false;
     if (phoneNumber != other.phoneNumber) return false;
-    if (id != other.id)) return false;
+    if (id != other.id) return false;
     if (userName == null && other.userName != null) return false;
     if (!userName.equals(other.userName)) return false;
     return true;
