@@ -1,30 +1,29 @@
 package hu.uni.miskolc.iit.software_testing.model;
 
 
-import java.util.Objects;
-
 public class User {
     /*
     TODO: id, userName, adress, phoneNumber
      */
 
-    private String id;
-    private String userName;
-    private String address;
-    private long phoneNumber;
-    private int age;
-    private String drivingLicenceNumber;
-    private UserType userType;
+  private String id;
+  private String userName;
+  private String address;
+  private long phoneNumber;
+  private int age;
+  private String drivingLicenceNumber;
+  private UserType userType;
 
   public String getId() {
     return id;
   }
-  public UserType getUserType(){
-    return userType;
-  }
 
   public void setId(String id) {
     this.id = id;
+  }
+
+  public UserType getUserType() {
+    return userType;
   }
 
   public String getUserName() {
@@ -67,15 +66,15 @@ public class User {
     if (o == null || getClass() != o.getClass()) return false;
     User other = (User) o;
 
-    if(address  == null && other.address != null) return false;
-    if(!address.equals(other.address))  return false;
-    if(drivingLicenceNumber == null && other.drivingLicenceNumber != null) return false;
-    if(!drivingLicenceNumber.equals(other.drivingLicenceNumber)) return false;
-    if(phoneNumber != other.phoneNumber) return false;
-    if(id == null && other.id != null) return false;
-    if(!id.equals(other.id)) return false;
-    if(userName == null && other.userName != null) return false;
-    if(!userName.equals(other.userName)) return false;
+    if (address == null && other.address != null) return false;
+    if (!address.equals(other.address)) return false;
+    if (drivingLicenceNumber == null && other.drivingLicenceNumber != null) return false;
+    if (!drivingLicenceNumber.equals(other.drivingLicenceNumber)) return false;
+    if (phoneNumber != other.phoneNumber) return false;
+    if (id == null && other.id != null) return false;
+    if (!id.equals(other.id)) return false;
+    if (userName == null && other.userName != null) return false;
+    if (!userName.equals(other.userName)) return false;
     return true;
 
   }
@@ -84,7 +83,7 @@ public class User {
   public int hashCode() {
     final int prime = 31;
     int result = 1;
-    result = prime * result + (int)(phoneNumber ^ (phoneNumber >>> 32));
+    result = prime * result + (int) (phoneNumber ^ (phoneNumber >>> 32));
     result = prime * result + ((address == null) ? 0 : address.hashCode());
     result = prime * result + age;
     result = prime * result + ((userName == null) ? 0 : userName.hashCode());

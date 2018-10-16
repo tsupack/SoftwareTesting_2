@@ -1,6 +1,6 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
-public class CarNotFoundException extends Exception{
+public class CarNotFoundException extends Exception {
   private String message;
 
   public CarNotFoundException(String message) {

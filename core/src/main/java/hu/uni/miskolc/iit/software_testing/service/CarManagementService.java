@@ -10,8 +10,9 @@ public interface CarManagementService {
     TODO: create interface for the Vehicle management service
      */
 
-    /**
+  /**
    * Creates a new car object
+   *
    * @param car
    * @return Car object
    */
@@ -19,13 +20,15 @@ public interface CarManagementService {
 
   /**
    * Returns with a Car object by the ID
+   *
    * @param id
    * @return Car object
    */
-  Car getCarById( int id);
+  Car getCarById(int id);
 
   /**
    * Returns the list of cars filtered by options
+   *
    * @param searchCarRequest filter options (manufacturer, year, price)
    * @return List of Car objects
    */
@@ -33,12 +36,14 @@ public interface CarManagementService {
 
   /**
    * Returns the list of all cars
+   *
    * @return List of Car object
    */
   List<Car> getCars();
 
   /**
    * Updates a car and returns the updated object
+   *
    * @param car object
    * @return Car object
    */
@@ -46,6 +51,7 @@ public interface CarManagementService {
 
   /**
    * Deletes the car what is given as parameter
+   *
    * @param car
    */
   void removeCar(Car car);

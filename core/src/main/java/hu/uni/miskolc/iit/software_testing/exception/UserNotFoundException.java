@@ -4,12 +4,12 @@ public class UserNotFoundException extends Exception {
 
   private String message;
 
-  public UserNotFoundException(String s){
+  public UserNotFoundException(String s) {
     this.message = s;
   }
 
   @Override
-  public String toString(){
+  public String toString() {
     return "User can not be found: " + message + ".";
   }
 }

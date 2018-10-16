@@ -1,9 +1,9 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
-public class RentNotFoundException extends Exception{
+public class RentNotFoundException extends Exception {
   private String message;
 
-  public RentNotFoundException(String message){
+  public RentNotFoundException(String message) {
     this.message = message;
   }
 

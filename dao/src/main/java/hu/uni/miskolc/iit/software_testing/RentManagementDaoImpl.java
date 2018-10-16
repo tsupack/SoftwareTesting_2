@@ -4,9 +4,17 @@ import hu.uni.miskolc.iit.software_testing.dao.RentManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.RentNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class RentManagementDaoImpl implements RentManagementDao {
+  private File database;
+
+  public RentManagementDaoImpl(File file) {
+    this.database = file;
+  }
 
   @Override
   public Rent createRent(Rent rent) {
@@ -20,7 +28,7 @@ public class RentManagementDaoImpl implements RentManagementDao {
 
   @Override
   public Collection<Rent> getRents() {
-    return null;
+    return readDatabase();
   }
 
   @Override
@@ -30,11 +38,20 @@ public class RentManagementDaoImpl implements RentManagementDao {
 
   @Override
   public boolean exists(Rent rent) {
-    return false;
+    List<Rent> rents = readDatabase();
+    return rents.contains(rent);
   }
 
   @Override
   public void clear() {
 
+  }
+
+  private List<Rent> readDatabase() {
+    List<Rent> result = new ArrayList<Rent>();
+
+    // TODO: Implement the database reading method, until then return with mocked data
+
+    return result;
   }
 }
