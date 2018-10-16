@@ -20,9 +20,10 @@ public class Rent {
    * Price per km
    */
   private int distancePrice;
+  private boolean isPaid;
 
 
-  public Rent(long id, long userId, long vehicleId, Date startDate, Date endDate, int daysUsed, int distance, int dailyPrice, int distancePrice) {
+  public Rent(long id, long userId, long vehicleId, Date startDate, Date endDate, int daysUsed, int distance, int dailyPrice, int distancePrice, boolean isPaid) {
     this.id = id;
     this.userId = userId;
     this.vehicleId = vehicleId;
@@ -32,6 +33,15 @@ public class Rent {
     this.distance = distance;
     this.dailyPrice = dailyPrice;
     this.distancePrice = distancePrice;
+    this.isPaid = isPaid;
+  }
+
+  public boolean isPaid() {
+    return isPaid;
+  }
+
+  public void setPaid(boolean paid) {
+    isPaid = paid;
   }
 
   public long getId() {

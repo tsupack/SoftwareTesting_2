@@ -14,9 +14,13 @@ public class User {
     private long phoneNumber;
     private int age;
     private String drivingLicenceNumber;
+    private UserType userType;
 
   public String getId() {
     return id;
+  }
+  public UserType getUserType(){
+    return userType;
   }
 
   public void setId(String id) {
