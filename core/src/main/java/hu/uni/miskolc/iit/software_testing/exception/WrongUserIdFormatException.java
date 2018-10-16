@@ -9,6 +9,6 @@ public class WrongUserIdFormatException extends Exception {
 
   @Override
   public String toString(){
-    return message;
+    return "User Id format is wrong: " + message + ".";
   }
 }

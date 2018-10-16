@@ -10,6 +10,6 @@ public class UserNotFoundException extends Exception {
 
   @Override
   public String toString(){
-    return message;
+    return "User can not be found: " + message + ".";
   }
 }
