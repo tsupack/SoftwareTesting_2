@@ -9,7 +9,7 @@ public interface UserManagementDao {
 
   User addUser(User user);
 
-  User getuserById(long id) throws UserNotFoundException;
+  User getUserById(long id) throws UserNotFoundException;
 
   Collection<User> getUsers();
 

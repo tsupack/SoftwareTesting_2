@@ -7,6 +7,7 @@ import hu.uni.miskolc.iit.software_testing.exception.UserNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
 import hu.uni.miskolc.iit.software_testing.model.User;
+import hu.uni.miskolc.iit.software_testing.model.VehicleStatusType;
 import hu.uni.miskolc.iit.software_testing.service.RentManagementService;
 import org.junit.Before;
 import org.junit.Test;
@@ -96,7 +97,7 @@ public class RentManagementServiceImpTest {
     car.setId(1L);
     car.setType("Car");
     car.setManufacturer("Fiat");
-    car.setCarStatus("Free");
+    car.setCarStatus(VehicleStatusType.FREE);
     car.setPerformance(100);
     car.setYearOfManufacture(new Date());
     car.setRentCost(200);
@@ -127,7 +128,7 @@ public class RentManagementServiceImpTest {
     expect(rentManagementDao.exists(anyObject(Rent.class))).andReturn(false);
     replay(rentManagementDao);
 
-    expect(userManagementDao.getuserById(anyLong())).andReturn(user).anyTimes();
+    expect(userManagementDao.getUserById(anyLong())).andReturn(user).anyTimes();
     replay(userManagementDao);
 
     expect(carManagementDao.getCarById(anyLong())).andReturn(car);
@@ -158,8 +159,44 @@ public class RentManagementServiceImpTest {
 
   @Test
   public void updateRent() throws Exception{
-    TODO:
-      throw new NotImplementedException();
+    DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    Date startDate = null;
+    Date endDate = null;
+    try{
+      startDate = format.parse("2018.05.11");
+      endDate = format.parse("2018.08.12");
+    }catch(ParseException e){
+      e.printStackTrace();
+    }
+
+    rentAfterUpdate = new Rent(
+            1L,
+            300L,
+            7L,
+            startDate,
+            endDate,
+            24,
+            100,
+            15000,
+            1000,
+            false
+
+    );
+
+    expect(rentManagementDao.exists(anyObject(Rent.class))).andReturn(true);
+    expect(rentManagementDao.createRent(anyObject(Rent.class))).andReturn(rentAfterUpdate);
+
+    expect(userManagementDao.getUserById(anyLong())).andReturn(user).anyTimes();
+
+    expect(carManagementDao.getCarById(anyLong())).andReturn(car);
+
+    replay(rentManagementDao);
+    replay(userManagementDao);
+    replay(carManagementDao);
+
+    Rent actual = rentManagementService.updateRent(rentAfterUpdate);
+
+    assert(rentAfterUpdate).equals(actual);
   }
 
   @Test

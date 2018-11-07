@@ -8,7 +8,7 @@ public class Car {
   private long id;
   private String type;
   private String manufacturer;
-  private String carStatus;
+  private VehicleStatusType carStatus;
   private int performance;
   private Date yearOfManufacture;
   private double rentCost;
@@ -56,11 +56,11 @@ public class Car {
     this.manufacturer = manufacturer;
   }
 
-  public String getCarStatus() {
+  public VehicleStatusType getCarStatus() {
     return carStatus;
   }
 
-  public void setCarStatus(String carStatus) {
+  public void setCarStatus(VehicleStatusType carStatus) {
     this.carStatus = carStatus;
   }
 

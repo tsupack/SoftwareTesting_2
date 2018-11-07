@@ -7,6 +7,7 @@ import hu.uni.miskolc.iit.software_testing.service.UserManagementService;
 import java.util.List;
 
 public class UserManagementServiceImpl implements UserManagementService {
+
   @Override
   public User getUserById(int id) {
     return null;
