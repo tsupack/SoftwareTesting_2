@@ -1,5 +1,7 @@
 package hu.uni.miskolc.iit.software_testing.service;
 
+import hu.uni.miskolc.iit.software_testing.exception.RentAlreadyExistsException;
+import hu.uni.miskolc.iit.software_testing.exception.WrontRentDateException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
 import hu.uni.miskolc.iit.software_testing.model.SearchRentRequest;
 
@@ -16,7 +18,7 @@ public interface RentManagementService {
    * @param rent
    * @return rent object
    */
-  Rent addNewRent(Rent rent);
+  Rent addNewRent(Rent rent) throws RentAlreadyExistsException, WrontRentDateException;
 
   /**
    * Returns a Rent object by the given Id
