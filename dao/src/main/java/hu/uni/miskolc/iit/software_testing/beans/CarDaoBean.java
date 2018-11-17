@@ -1,10 +1,12 @@
-package hu.uni.miskolc.iit.software_testing.model;
+package hu.uni.miskolc.iit.software_testing.beans;
+
+import hu.uni.miskolc.iit.software_testing.model.Car;
+import hu.uni.miskolc.iit.software_testing.model.VehicleStatusType;
 
 import java.util.Date;
 import java.util.Objects;
 
-public class Car {
-
+public class CarDaoBean {
   private long id;
   private String type;
   private String manufacturer;
@@ -130,19 +132,18 @@ public class Car {
     return result;
   }
 
-  @Override
-  public String toString() {
-    return "Car{" +
-            "id='" + id + '\'' +
-            ", type='" + type + '\'' +
-            ", manufacturer='" + manufacturer + '\'' +
-            ", carStatus='" + carStatus + '\'' +
-            ", performance=" + performance +
-            ", yearOfManufacture=" + yearOfManufacture +
-            ", rentCost=" + rentCost +
-            ", personSeats=" + personSeats +
-            "plateNumber='" + plateNumber + '\'' +
-            ", vehicleIdentificationNumber='" + carVIN + '\'' +
-            '}';
+  public Car extract() {
+    Car result = new Car();
+    result.setId(this.getId());
+    result.setType(this.getType());
+    result.setManufacturer(this.getManufacturer());
+    result.setYearOfManufacture(this.getYearOfManufacture());
+    result.setRentCost(this.getRentCost());
+    result.setPersonSeats(this.getPersonSeats());
+    result.setPerformance(this.getPerformance());
+    result.setCarStatus(this.getCarStatus());
+    result.setPlateNumber(this.getPlateNumber());
+    result.setCarVIN(this.getCarVIN());
+    return result;
   }
 }

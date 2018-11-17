@@ -13,7 +13,6 @@
         <module>core</module>
         <module>service</module>
         <module>dao</module>
-        <module>web</module>
         <module>controller</module>
     </modules>
 
@@ -28,6 +27,7 @@
         <spring.webmvc.version>5.1.0.RELEASE</spring.webmvc.version>
         <easymock.version>3.6</easymock.version>
         <junit.version>4.11</junit.version>
+        <jackson.version>2.9.7</jackson.version>
     </properties>
 
     <dependencies>

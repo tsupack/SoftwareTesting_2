@@ -24,7 +24,7 @@ public class UserManagementDaoImpl implements UserManagementDao {
   }
 
   @Override
-  public User getuserById(long id) throws UserNotFoundException {
+  public User getUserById(long id) throws UserNotFoundException {
     List<User> users = readDatabase();
     for(User user : users){
       if(user.getId() == id)

@@ -1,7 +1,9 @@
-package hu.uni.miskolc.iit.software_testing.model;
+package hu.uni.miskolc.iit.software_testing.beans;
 
+import hu.uni.miskolc.iit.software_testing.model.User;
+import hu.uni.miskolc.iit.software_testing.model.UserType;
 
-public class User {
+public class UserDaoBean {
   private long id;
   private String userName;
   private String address;
@@ -108,5 +110,18 @@ public class User {
             ", drivingLicenceNumber='" + drivingLicenceNumber + '\'' +
             ", userType=" + userType +
             '}';
+  }
+
+  public User extract() {
+      User User = new User();
+      User.setId(this.getId());
+      User.setAge(this.getAge());
+      User.setDrivingLicenceNumber(this.getDrivingLicenceNumber());
+      User.setPhoneNumber(this.getPhoneNumber());
+      User.setUserName(this.getUserName());
+      User.setAddress(this.getAddress());
+      User.setUserType(this.getUserType());
+
+      return User;
   }
 }

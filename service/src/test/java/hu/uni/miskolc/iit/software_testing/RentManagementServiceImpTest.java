@@ -93,7 +93,7 @@ public class RentManagementServiceImpTest {
 
     car = new Car();
 
-    car.setCareIdNumber("ID227375");
+    car.setCarVIN("ID227375");
     car.setId(1L);
     car.setType("Car");
     car.setManufacturer("Fiat");

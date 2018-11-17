@@ -1,12 +1,16 @@
 package hu.uni.miskolc.iit.software_testing;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import hu.uni.miskolc.iit.software_testing.beans.CarDaoBean;
 import hu.uni.miskolc.iit.software_testing.dao.CarManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.CarNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -53,11 +57,50 @@ public class CarManagementDaoImpl implements CarManagementDao {
     throw new NotImplementedException();
   }
 
-  private List<Car> readDatabase() {
+  private List<Car> readDatabase(){
     List<Car> result = new ArrayList<Car>();
-
-    // TODO: Implement the database reading method, until then return with mocked data
-
+    ObjectMapper mapper = new ObjectMapper();
+    try {
+      List<CarDaoBean> beans = Arrays.asList(mapper.readValue(database, CarDaoBean[].class));
+      for (CarDaoBean bean : beans)
+      {
+        result.add(bean.extract());
+      }
+    } catch (IOException e) {
+      System.out.println(database.getAbsolutePath());
+      e.printStackTrace();
+    }
     return result;
+  }
+
+  private void writeDatabase(List<Car> Cars)
+  {
+    List<CarDaoBean> beans = new ArrayList<CarDaoBean>();
+    for (Car Car : Cars){
+      beans.add(convert(Car));
+    }
+
+    ObjectMapper mapper = new ObjectMapper();
+    try {
+      mapper.writeValue(database, beans);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  private CarDaoBean convert(Car car)
+  {
+    CarDaoBean bean = new CarDaoBean();
+      bean.setId(car.getId());
+      bean.setPlateNumber(car.getPlateNumber());
+      bean.setCarVIN(car.getCarVIN());
+      bean.setType(car.getType());
+      bean.setManufacturer(car.getManufacturer());
+      bean.setYearOfManufacture(car.getYearOfManufacture());
+      bean.setRentCost(car.getRentCost());
+      bean.setPersonSeats(car.getPersonSeats());
+      bean.setPerformance(car.getPerformance());
+      bean.setCarStatus(car.getCarStatus());
+    return bean;
   }
 }

@@ -1,13 +1,19 @@
-package hu.uni.miskolc.iit.software_testing.model;
+package hu.uni.miskolc.iit.software_testing.beans;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import hu.uni.miskolc.iit.software_testing.model.Rent;
 
 import java.util.Date;
 
-public class Rent {
-
+public class RentDaoBean {
   private long id;
   private long userId;
   private long vehicleId;
+
+  @JsonFormat(pattern="yyyy-MM-dd", timezone = "Europe/Budapest")
   private Date startDate;
+
+  @JsonFormat(pattern="yyyy-MM-dd", timezone = "Europe/Budapest")
   private Date endDate;
   private int daysUsed;
   /**
@@ -22,21 +28,6 @@ public class Rent {
   private int distancePrice;
   private boolean isPaid;
 
-
-
-  public Rent(long id, long userId, long vehicleId, Date startDate,
-              Date endDate, int daysUsed, int distance, int dailyPrice, int distancePrice, boolean isPaid) {
-    this.id = id;
-    this.userId = userId;
-    this.vehicleId = vehicleId;
-    this.startDate = startDate;
-    this.endDate = endDate;
-    this.daysUsed = daysUsed;
-    this.distance = distance;
-    this.dailyPrice = dailyPrice;
-    this.distancePrice = distancePrice;
-    this.isPaid = isPaid;
-  }
 
   public boolean isPaid() {
     return isPaid;
@@ -138,4 +129,19 @@ public class Rent {
     return endDate.equals(rent.getEndDate());
   }
 
+  public Rent extract()
+  {
+    return new Rent(
+    this.getId(),
+    this.getUserId(),
+    this.getVehicleId(),
+    this.getStartDate(),
+    this.getEndDate(),
+    this.getDaysUsed(),
+    this.getDistance(),
+    this.getDailyPrice(),
+    this.getDistancePrice(),
+    this.isPaid()
+    );
+  }
 }
