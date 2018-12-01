@@ -24,6 +24,7 @@ public class RentManagementServiceImpl implements RentManagementService {
     this.userManagementDao = userManagementDao;
     this.carManagementDao = carManagementDao;
   }
+
   @Override
   public Rent addNewRent(Rent rent) throws RentAlreadyExistsException, WrontRentDateException, InvalidDataException {
       if(rentManagementDao.exists(rent)){

@@ -10,6 +10,7 @@ import java.util.List;
 public interface UserManagementService {
 
   /**
+<<<<<<< HEAD
    * Records a new user object
    * @param user object
    * @return Created user object

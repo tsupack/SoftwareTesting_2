@@ -10,7 +10,6 @@ import hu.uni.miskolc.iit.software_testing.service.UserManagementService;
 import java.util.List;
 
 public class UserManagementServiceImpl implements UserManagementService {
-
   private UserManagementDao userManagementDao;
 
   public UserManagementServiceImpl(UserManagementDao userManagementDao) {
@@ -39,8 +38,7 @@ public class UserManagementServiceImpl implements UserManagementService {
   @Override
   public User getUserById(int id) throws UserNotFoundException {
     User result = userManagementDao.getUserById(id);
-    if (result == null)
-    {
+    if (result == null) {
       throw new UserNotFoundException("User can not be found with this id: " + id);
     } else {
       return result;
@@ -91,7 +89,6 @@ public class UserManagementServiceImpl implements UserManagementService {
     }
     userManagementDao.deleteUser(user);
   }
-
 
   @Override
   public int countUser() {

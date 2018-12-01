@@ -10,9 +10,6 @@ import hu.uni.miskolc.iit.software_testing.model.SearchRentRequest;
 import java.util.List;
 
 public interface RentManagementService {
-  /*
-  TODO: create interface skeleton for the Rent management service
-   */
 
   /**
    * Adds a new rent and returns it
@@ -59,13 +56,11 @@ public interface RentManagementService {
    * @param rent
    */
   void removeRent(Rent rent) throws RentNotFoundException, WrontRentDateException, InvalidDataException;
-
   /**
    * Returns the number of Rents
    *
    * @return Number of rents
    */
   int rentCount();
-
 
 }

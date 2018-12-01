@@ -1,5 +1,6 @@
 package hu.uni.miskolc.iit.software_testing;
 
+
 import hu.uni.miskolc.iit.software_testing.exception.NegativeValueException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
 import hu.uni.miskolc.iit.software_testing.model.SearchCarRequest;
