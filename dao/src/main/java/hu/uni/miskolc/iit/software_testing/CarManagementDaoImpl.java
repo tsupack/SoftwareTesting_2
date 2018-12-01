@@ -23,7 +23,10 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public Car createCar(Car car) {
-    throw new NotImplementedException();
+    List<Car> cars = readDatabase();
+    cars.add(car);
+    writeDatabase(cars);
+    return readDatabase().get(cars.indexOf(car));
   }
 
   @Override
@@ -43,7 +46,12 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public void deleteCar(Car car) throws CarNotFoundException {
-    throw new NotImplementedException();
+    List<Car> cars = readDatabase();
+    if (!cars.contains(car)){
+      throw new CarNotFoundException("The requested car can not be found! " + car.toString());
+    }
+    cars.remove(car);
+    writeDatabase(cars);
   }
 
   @Override
@@ -54,7 +62,7 @@ public class CarManagementDaoImpl implements CarManagementDao {
 
   @Override
   public void clear() {
-    throw new NotImplementedException();
+    writeDatabase(new ArrayList<Car>());
   }
 
   private List<Car> readDatabase(){

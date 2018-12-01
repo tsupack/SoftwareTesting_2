@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Car {
 
-  private long id;
+  private int id;
   private String type;
   private String manufacturer;
   private VehicleStatusType carStatus;
@@ -32,11 +32,11 @@ public class Car {
     this.carVIN = carVIN;
   }
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 

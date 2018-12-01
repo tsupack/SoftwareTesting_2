@@ -1,5 +1,6 @@
 package hu.uni.miskolc.iit.software_testing.service;
 
+import hu.uni.miskolc.iit.software_testing.exception.CarNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
 import hu.uni.miskolc.iit.software_testing.model.SearchCarRequest;
 
@@ -24,7 +25,7 @@ public interface CarManagementService {
    * @param id
    * @return Car object
    */
-  Car getCarById(int id);
+  Car getCarById(int id)throws CarNotFoundException;
 
   /**
    * Returns the list of cars filtered by options
@@ -47,12 +48,12 @@ public interface CarManagementService {
    * @param car object
    * @return Car object
    */
-  Car updateCar(Car car);
+  Car updateCar(Car car)throws CarNotFoundException;
 
   /**
    * Deletes the car what is given as parameter
    *
    * @param car
    */
-  void removeCar(Car car);
+  void removeCar(Car car)throws CarNotFoundException;
 }
