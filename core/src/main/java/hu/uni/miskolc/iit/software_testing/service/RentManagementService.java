@@ -1,6 +1,8 @@
 package hu.uni.miskolc.iit.software_testing.service;
 
+import com.sun.media.sound.InvalidDataException;
 import hu.uni.miskolc.iit.software_testing.exception.RentAlreadyExistsException;
+import hu.uni.miskolc.iit.software_testing.exception.RentNotFoundException;
 import hu.uni.miskolc.iit.software_testing.exception.WrontRentDateException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
 import hu.uni.miskolc.iit.software_testing.model.SearchRentRequest;
@@ -8,9 +10,6 @@ import hu.uni.miskolc.iit.software_testing.model.SearchRentRequest;
 import java.util.List;
 
 public interface RentManagementService {
-  /*
-  TODO: create interface skeleton for the Rent management service
-   */
 
   /**
    * Adds a new rent and returns it
@@ -18,7 +17,7 @@ public interface RentManagementService {
    * @param rent
    * @return rent object
    */
-  Rent addNewRent(Rent rent) throws RentAlreadyExistsException, WrontRentDateException;
+  Rent addNewRent(Rent rent) throws RentAlreadyExistsException, WrontRentDateException, InvalidDataException;
 
   /**
    * Returns a Rent object by the given Id
@@ -26,7 +25,7 @@ public interface RentManagementService {
    * @param id
    * @return rent object
    */
-  Rent getRentById(Long id);
+  Rent getRentById(int id) throws RentNotFoundException;
 
   /**
    * Returns a list of Rent objects by given filter options
@@ -49,21 +48,19 @@ public interface RentManagementService {
    * @param rent
    * @return Rent object
    */
-  Rent updateRent(Rent rent);
+  Rent updateRent(Rent rent) throws RentNotFoundException, WrontRentDateException, InvalidDataException;
 
   /**
    * Removes the given Rent object
    *
    * @param rent
    */
-  void removeRent(Rent rent);
-
+  void removeRent(Rent rent) throws RentNotFoundException, WrontRentDateException, InvalidDataException;
   /**
    * Returns the number of Rents
    *
    * @return Number of rents
    */
   int rentCount();
-
 
 }

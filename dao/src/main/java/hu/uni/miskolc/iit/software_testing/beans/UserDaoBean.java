@@ -4,7 +4,7 @@ import hu.uni.miskolc.iit.software_testing.model.User;
 import hu.uni.miskolc.iit.software_testing.model.UserType;
 
 public class UserDaoBean {
-  private long id;
+  private int id;
   private String userName;
   private String address;
   private long phoneNumber;
@@ -12,11 +12,11 @@ public class UserDaoBean {
   private String drivingLicenceNumber;
   private UserType userType;
 
-  public long getId() {
+  public int getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(int id) {
     this.id = id;
   }
 
