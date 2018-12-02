@@ -63,7 +63,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-<<<<<<< HEAD
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -74,7 +73,5 @@
                 </configuration>
             </plugin>
         </plugins>
-=======
->>>>>>> parent of 47149e1... Structure
     </build>
 </project>

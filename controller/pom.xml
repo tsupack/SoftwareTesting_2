@@ -10,7 +10,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>controller</artifactId>
-<<<<<<< HEAD
     <dependencies>
         <dependency>
             <groupId>hu.uni.miskolc.iit.software_testing</groupId>
@@ -19,8 +18,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-=======
->>>>>>> parent of 47149e1... Structure
-
-
 </project>
