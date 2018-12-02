@@ -8,6 +8,12 @@ public class SearchCarRequest {
   private Date yearOfManufacture;
   private double rentCost;
 
+  public SearchCarRequest(String manufacturer, Date yearOfManufacture, double rentCost) {
+    this.manufacturer = manufacturer;
+    this.yearOfManufacture = yearOfManufacture;
+    this.rentCost = rentCost;
+  }
+  
   public String getManufacturer() {
     return manufacturer;
   }

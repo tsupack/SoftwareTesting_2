@@ -10,6 +10,15 @@ public class User {
   private String drivingLicenceNumber;
   private UserType userType;
 
+  public User(int id, String userName, String address, long phoneNumber, int age, String drivingLicenceNumber, UserType userType) {
+    this.id = id;
+    this.userName = userName;
+    this.address = address;
+    this.phoneNumber = phoneNumber;
+    this.age = age;
+    this.drivingLicenceNumber = drivingLicenceNumber;
+    this.userType = userType;
+  }
   public int getId() {
     return id;
   }

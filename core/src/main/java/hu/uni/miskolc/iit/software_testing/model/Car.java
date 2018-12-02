@@ -16,6 +16,19 @@ public class Car {
   private String plateNumber;
   private String carVIN;
 
+  public Car(int id, String type, String manufacturer, VehicleStatusType carStatus, int performance, Date yearOfManufacture, double rentCost, int personSeats, String plateNumber, String carVIN) {
+    this.id = id;
+    this.type = type;
+    this.manufacturer = manufacturer;
+    this.carStatus = carStatus;
+    this.performance = performance;
+    this.yearOfManufacture = yearOfManufacture;
+    this.rentCost = rentCost;
+    this.personSeats = personSeats;
+    this.plateNumber = plateNumber;
+    this.carVIN = carVIN;
+  }
+  
   public String getPlateNumber() {
     return plateNumber;
   }
