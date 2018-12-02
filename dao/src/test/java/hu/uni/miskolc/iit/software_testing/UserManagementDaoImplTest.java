@@ -27,24 +27,20 @@ public class UserManagementDaoImplTest {
     }
 
 
-    @Test
     public void addUser() {
         assertEquals(User_Test, userManagementTest.addUser(User_Test));
     }
 
-    @Test
     public void getUserById() throws Exception{
         assertEquals(User_Test, userManagementTest.getUserById(1));
     }
 
-    @Test
     public void deleteUser() throws Exception {
         thrown.expect(UserNotFoundException.class);
         userManagementTest.deleteUser(User_Test2);
     }
 
 
-    @Test
     public void exists() {
         assertEquals(false, userManagementTest.exists(User_Test2));
     }
