@@ -8,7 +8,7 @@ import java.util.Date;
 import static org.junit.Assert.*;
 
 public class SearchCarRequestTest {
-
+    private double delta = 0.0;
     private SearchCarRequest request;
     @Before
     public void setUp() {
@@ -33,6 +33,6 @@ public class SearchCarRequestTest {
     public void getRentCost() {
         double expected=50;
         double actual=request.getRentCost();
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, delta);
     }
 }

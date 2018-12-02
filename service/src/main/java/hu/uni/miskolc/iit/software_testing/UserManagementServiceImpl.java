@@ -18,18 +18,19 @@ public class UserManagementServiceImpl implements UserManagementService {
 
   @Override
   public User createUser(User user) throws WrongUserIdFormatException {
+
     if (user.getId() != 0) {
-      User oldUser = new User();
+      User newUser = new User();
       if (user.getId() != 0){
-        oldUser.setId(user.getId());
+        newUser.setId(user.getId());
       }
-      oldUser.setId(user.getId());
-      oldUser.setAge(user.getAge());
-      oldUser.setDrivingLicenceNumber(user.getDrivingLicenceNumber());
-      oldUser.setPhoneNumber(user.getPhoneNumber());
-      oldUser.setUserName(user.getUserName());
-      oldUser.setAddress(user.getAddress());
-      return userManagementDao.addUser(oldUser);
+      newUser.setId(user.getId());
+      newUser.setAge(user.getAge());
+      newUser.setDrivingLicenceNumber(user.getDrivingLicenceNumber());
+      newUser.setPhoneNumber(user.getPhoneNumber());
+      newUser.setUserName(user.getUserName());
+      newUser.setAddress(user.getAddress());
+      return userManagementDao.addUser(newUser);
     } else {
       throw new WrongUserIdFormatException("User id is not identifiable");
     }

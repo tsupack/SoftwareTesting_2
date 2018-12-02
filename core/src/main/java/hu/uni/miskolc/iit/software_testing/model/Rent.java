@@ -23,7 +23,7 @@ public class Rent {
   private boolean isPaid;
 
 
-
+  public Rent (){}
   public Rent(long id, long userId, long vehicleId, Date startDate,
               Date endDate, int daysUsed, int distance, int dailyPrice, int distancePrice, boolean isPaid) {
     this.id = id;

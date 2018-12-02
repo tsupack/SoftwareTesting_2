@@ -59,9 +59,6 @@ public class RentManagementServiceImpTest {
       e.printStackTrace();
     }
 
-
-
-
     rentObject = new Rent(
             1L,
             1L,

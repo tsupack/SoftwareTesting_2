@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class CarTest {
 
-
+    private double delta = 0.0;
     private Car Car_Test;
     @Before
     public void setUp() {
@@ -35,7 +35,7 @@ public class CarTest {
     public void getId() {
         int expected=123;
         int actual=Car_Test.getId();
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, delta);
     }
 
     @Test
@@ -75,7 +75,7 @@ public class CarTest {
     public void getRentCost() {
         double expected=300;
         double actual=Car_Test.getRentCost();
-        assertEquals(expected, actual);
+        assertEquals(expected, actual, delta);
     }
 
     @Test

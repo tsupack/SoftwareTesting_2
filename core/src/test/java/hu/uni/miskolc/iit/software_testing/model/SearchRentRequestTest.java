@@ -3,6 +3,7 @@ package hu.uni.miskolc.iit.software_testing.model;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -14,7 +15,9 @@ public class SearchRentRequestTest {
 
     @Before
     public void setUp() {
-        this.request =new SearchRentRequest(123, new Date(2018, 12, 12), new Date(2018, 12, 19));
+        Date startDate = new Date(61202516585000L);
+        Date endDate = new Date(61202516585123L);
+        this.request =new SearchRentRequest(123, startDate, endDate);
     }
 
 
@@ -27,15 +30,15 @@ public class SearchRentRequestTest {
 
     @Test
     public void getStartDate() {
-        Date expected= new Date(2018, 12, 12);
+        Date expected= new Date(61202516585000L);
         Date actual=request.getStartDate();
         assertEquals(expected, actual);
     }
 
     @Test
     public void getEndDate() {
-        Date expected= new Date(2018, 12, 19);
-        Date actual=request.getStartDate();
+        Date expected= new Date(61202516585123L);
+        Date actual=request.getEndDate();
         assertEquals(expected, actual);
     }
 }

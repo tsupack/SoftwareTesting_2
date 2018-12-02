@@ -16,6 +16,8 @@ public class Car {
   private String plateNumber;
   private String carVIN;
 
+  public Car(){}
+
   public Car(int id, String type, String manufacturer, VehicleStatusType carStatus, int performance, Date yearOfManufacture, double rentCost, int personSeats, String plateNumber, String carVIN) {
     this.id = id;
     this.type = type;
