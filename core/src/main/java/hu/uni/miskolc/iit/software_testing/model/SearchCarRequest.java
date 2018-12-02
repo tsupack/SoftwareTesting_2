@@ -13,7 +13,7 @@ public class SearchCarRequest {
     this.yearOfManufacture = yearOfManufacture;
     this.rentCost = rentCost;
   }
-
+  
   public String getManufacturer() {
     return manufacturer;
   }
