@@ -1,6 +1,7 @@
 package hu.uni.miskolc.iit.software_testing.model;
 import hu.uni.miskolc.iit.software_testing.exception.InvalidArgumentsException;
 import hu.uni.miskolc.iit.software_testing.exception.InvalidDateException;
+import hu.uni.miskolc.iit.software_testing.exception.NegativeValueException;
 import hu.uni.miskolc.iit.software_testing.exception.NotExistingVehicleStatusException;
 import org.junit.Test;
 import java.util.Date;
@@ -9,17 +10,16 @@ import static org.junit.Assert.fail;
 
 public class CarConstructorTest {
 
-    Car car;
-    int id=1;
-    String type="Zafira";
-    String manufacturer="Opel";
-
-    int performance=116;
-    Date yearOfManufacture=new Date(2014,2,2);
-    double rentCost=500;
-    int personSeats=7;
-    String plateNumber="MEM_123";
-    String carVIN="ASDASDASD";
+    private Car car;
+    private int id = 1;
+    private String type = "Zafira";
+    private String manufacturer = "Opel";
+    private int performance = 116;
+    private Date yearOfManufacture = new Date(2014,2,2);
+    private double rentCost = 500;
+    private int personSeats = 7;
+    private String plateNumber = "MEM_123";
+    private String carVIN = "ASDASDASD";
 
     @Before
     public void SetUp() throws InvalidArgumentsException
@@ -57,6 +57,45 @@ public class CarConstructorTest {
         catch(Exception e)
         {
             throw new InvalidArgumentsException(e);
+        }
+    }
+
+    @Test
+    public void testConstructorWithNegativePerformance() throws NegativeValueException
+    {
+        try
+        {
+            new Car(this.id, this.type, this.manufacturer, VehicleStatusType.RESERVED, -1, this.yearOfManufacture, this.rentCost, this.personSeats, this.plateNumber, this.carVIN);
+        }
+        catch(Exception e)
+        {
+            throw new NegativeValueException(e);
+        }
+    }
+
+    @Test
+    public void testConstructorWithNegativeRentCost() throws NegativeValueException
+    {
+        try
+        {
+            new Car(this.id, this.type, this.manufacturer, VehicleStatusType.RESERVED, this.performance, this.yearOfManufacture, -1, this.personSeats, this.plateNumber, this.carVIN);
+        }
+        catch(Exception e)
+        {
+            throw new NegativeValueException(e);
+        }
+    }
+
+    @Test
+    public void testConstructorWithNegativeSeats() throws NegativeValueException
+    {
+        try
+        {
+            new Car(this.id, this.type, this.manufacturer, VehicleStatusType.RESERVED, this.performance, this.yearOfManufacture, this.rentCost, -1, this.plateNumber, this.carVIN);
+        }
+        catch(Exception e)
+        {
+            throw new NegativeValueException(e);
         }
     }
 

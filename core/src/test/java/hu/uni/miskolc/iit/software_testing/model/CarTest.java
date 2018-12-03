@@ -1,5 +1,7 @@
 package hu.uni.miskolc.iit.software_testing.model;
 
+import hu.uni.miskolc.iit.software_testing.exception.InvalidArgumentsException;
+import hu.uni.miskolc.iit.software_testing.exception.NegativeValueException;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ public class CarTest {
     private double delta = 0.0;
     private Car Car_Test;
     @Before
-    public void setUp() {
+    public void setUp(){
         this.Car_Test =new Car(123, "Mini_Cooper_S", "BMW", VehicleStatusType.FREE, 235, new Date(2014, 02, 02), 300, 4, "324 GSH", "AUT 0123456789");
     }
 
