@@ -5,7 +5,6 @@ import hu.uni.miskolc.iit.software_testing.beans.CarDaoBean;
 import hu.uni.miskolc.iit.software_testing.dao.CarManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.CarNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Car;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.IOException;

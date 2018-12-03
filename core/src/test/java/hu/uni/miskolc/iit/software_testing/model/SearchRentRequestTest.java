@@ -3,7 +3,6 @@ package hu.uni.miskolc.iit.software_testing.model;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.Assert.*;

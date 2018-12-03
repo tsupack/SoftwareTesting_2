@@ -5,7 +5,6 @@ import hu.uni.miskolc.iit.software_testing.beans.UserDaoBean;
 import hu.uni.miskolc.iit.software_testing.dao.UserManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.UserNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.User;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.IOException;

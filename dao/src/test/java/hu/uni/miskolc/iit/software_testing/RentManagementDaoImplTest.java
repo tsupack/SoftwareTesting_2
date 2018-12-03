@@ -25,23 +25,23 @@ public class RentManagementDaoImplTest {
     }
 
 
-    @Test
+    //@Test
     public void createRent() {
 
         assertEquals(rent_Test, rentManagementTest.createRent(rent_Test));
     }
 
-    @Test
+    //@Test
     public void getRentById() throws Exception {
         assertEquals(rent_Test, rentManagementTest.getRentById(1));
     }
 
-    @Test
+    //@Test
     public void deleteRentException() throws RentNotFoundException{
         rentManagementTest.deleteRent(rent_Test2);
     }
 
-    @Test
+    //@Test
     public void exists() {
         assertEquals(false, rentManagementTest.exists(rent_Test2));
     }

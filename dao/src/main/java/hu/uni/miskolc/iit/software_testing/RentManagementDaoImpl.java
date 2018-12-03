@@ -5,7 +5,6 @@ import hu.uni.miskolc.iit.software_testing.beans.RentDaoBean;
 import hu.uni.miskolc.iit.software_testing.dao.RentManagementDao;
 import hu.uni.miskolc.iit.software_testing.exception.RentNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.File;
 import java.io.IOException;

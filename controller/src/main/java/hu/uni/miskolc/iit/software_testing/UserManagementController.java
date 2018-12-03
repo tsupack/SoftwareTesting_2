@@ -2,12 +2,10 @@ package hu.uni.miskolc.iit.software_testing;
 
 import hu.uni.miskolc.iit.software_testing.exception.UserNotFoundException;
 import hu.uni.miskolc.iit.software_testing.exception.WrongUserIdFormatException;
-import hu.uni.miskolc.iit.software_testing.model.SearchUserRequest;
 import hu.uni.miskolc.iit.software_testing.model.User;
 import hu.uni.miskolc.iit.software_testing.service.UserManagementService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 

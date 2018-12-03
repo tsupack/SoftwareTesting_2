@@ -1,7 +1,5 @@
 package hu.uni.miskolc.iit.software_testing.model;
 
-import hu.uni.miskolc.iit.software_testing.exception.InvalidArgumentsException;
-import hu.uni.miskolc.iit.software_testing.exception.NegativeValueException;
 import org.junit.Before;
 import org.junit.Test;
 
