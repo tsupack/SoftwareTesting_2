@@ -1,15 +1,23 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
 public class RentAlreadyExistsException extends Exception {
-  private String message;
-
-  public RentAlreadyExistsException(String message) {
-    this.message = message;
+  public RentAlreadyExistsException() {
   }
 
-  @Override
-  public String toString() {
-    return "Rent already exists with this ID: " + message + ".";
+  public RentAlreadyExistsException(String message) {
+    super(message);
+  }
+
+  public RentAlreadyExistsException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public RentAlreadyExistsException(Throwable cause) {
+    super(cause);
+  }
+
+  public RentAlreadyExistsException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }
 

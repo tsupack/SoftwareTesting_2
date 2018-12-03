@@ -13,8 +13,7 @@ import static org.junit.Assert.*;
 
 public class CarManagementDaoImplTest {
 
-    private Car car = new Car(123, "Mini_Cooper_S", "BMW", VehicleStatusType.FREE, 235, new Date(2014, 02, 02), 300, 4, "324 GSH", "AUT 0123456789");
-    ;
+    private Car car = new Car(123, "Mini_Cooper_S", "BMW", VehicleStatusType.FREE, 235, new Date(2014, 2, 2), 300, 4, "324 GSH", "AUT 0123456789");
     private File carDatabase;
     private CarManagementDaoImpl carManagementTest = new CarManagementDaoImpl(carDatabase);
     public ExpectedException thrown = ExpectedException.none();

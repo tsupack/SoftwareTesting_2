@@ -1,14 +1,22 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
 public class RentTotalFeeWrontException extends Exception {
-  private String message;
-
-  public RentTotalFeeWrontException(String message) {
-    this.message = message;
+  public RentTotalFeeWrontException() {
   }
 
-  @Override
-  public String toString() {
-    return "The given free is wrong: " + message + ".";
+  public RentTotalFeeWrontException(String message) {
+    super(message);
+  }
+
+  public RentTotalFeeWrontException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public RentTotalFeeWrontException(Throwable cause) {
+    super(cause);
+  }
+
+  public RentTotalFeeWrontException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }

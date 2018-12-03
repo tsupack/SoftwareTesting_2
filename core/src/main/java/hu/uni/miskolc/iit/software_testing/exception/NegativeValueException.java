@@ -1,14 +1,22 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
 public class NegativeValueException extends Exception {
-  private String message;
-
-  public NegativeValueException(String message) {
-    this.message = message;
+  public NegativeValueException() {
   }
 
-  @Override
-  public String toString() {
-    return "The value of the followings are negative: " + message + ".";
+  public NegativeValueException(String message) {
+    super(message);
+  }
+
+  public NegativeValueException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public NegativeValueException(Throwable cause) {
+    super(cause);
+  }
+
+  public NegativeValueException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }

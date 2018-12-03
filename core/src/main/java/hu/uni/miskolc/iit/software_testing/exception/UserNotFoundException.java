@@ -1,15 +1,22 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
 public class UserNotFoundException extends Exception {
-
-  private String message;
-
-  public UserNotFoundException(String s) {
-    this.message = s;
+  public UserNotFoundException() {
   }
 
-  @Override
-  public String toString() {
-    return "User can not be found: " + message + ".";
+  public UserNotFoundException(String message) {
+    super(message);
+  }
+
+  public UserNotFoundException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public UserNotFoundException(Throwable cause) {
+    super(cause);
+  }
+
+  public UserNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }

@@ -36,7 +36,7 @@ public class CarManagementDaoImpl implements CarManagementDao {
       if(car.getId() == id)
         return car;
     }
-    throw new CarNotFoundException(("The requested car can not be found, ID:" + id));
+    throw new CarNotFoundException("The requested car can not be found, ID:" + id);
   }
 
   @Override

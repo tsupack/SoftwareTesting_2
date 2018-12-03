@@ -4,7 +4,6 @@ import hu.uni.miskolc.iit.software_testing.exception.RentNotFoundException;
 import hu.uni.miskolc.iit.software_testing.model.Rent;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import java.io.File;
 import java.util.Date;
@@ -16,7 +15,7 @@ public class RentManagementDaoImplTest {
     private RentManagementDaoImpl rentManagementTest=new RentManagementDaoImpl(rentDatabase);
     private Rent rent_Test;
     private Rent rent_Test2;
-    public ExpectedException thrown =ExpectedException.none();
+
 
     @Before
     public void setUp(){
@@ -38,8 +37,7 @@ public class RentManagementDaoImplTest {
     }
 
     @Test
-    public void deleteRentException() throws Exception{
-        thrown.expect(RentNotFoundException.class);
+    public void deleteRentException() throws RentNotFoundException{
         rentManagementTest.deleteRent(rent_Test2);
     }
 

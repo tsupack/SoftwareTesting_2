@@ -1,14 +1,22 @@
 package hu.uni.miskolc.iit.software_testing.exception;
 
 public class RentNotFoundException extends Exception {
-  private String message;
-
-  public RentNotFoundException(String message) {
-    this.message = message;
+  public RentNotFoundException() {
   }
 
-  @Override
-  public String toString() {
-    return "Rent with this id does not exist: " + message + ".";
+  public RentNotFoundException(String message) {
+    super(message);
+  }
+
+  public RentNotFoundException(String message, Throwable cause) {
+    super(message, cause);
+  }
+
+  public RentNotFoundException(Throwable cause) {
+    super(cause);
+  }
+
+  public RentNotFoundException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    super(message, cause, enableSuppression, writableStackTrace);
   }
 }
